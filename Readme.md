@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Антон Киян](https://up.htmlacademy.ru/adaptive/16/user/885497).
-* Наставник: `Неизвестно`.
+* Наставник: [Владислав Кривокора](https://up.htmlacademy.ru/adaptive/16/user/167185).
 
 ---
 
