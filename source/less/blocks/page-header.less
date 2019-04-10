@@ -7,7 +7,7 @@
 .page-header__bar {
   display: flex;
   align-items: center;
-  padding: 11px 20px 16px;
+  padding: 11px 20px 15px;
 }
 
 .page-header__brand-name {
@@ -61,4 +61,36 @@
   height: 2px;
 
   background-color: #222222;
+}
+
+@media (min-width: @tablet-width) {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 109px;
+  }
+
+  .page-header__bar {
+    display: block;
+    padding: 0;
+  }
+
+  .page-header__brand-name {
+    display: none;
+  }
+
+  .page-header__toggle {
+    display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-header {
+    position: relative;
+
+    min-height: 200px;
+
+    z-index: 9999;
+  }
 }
