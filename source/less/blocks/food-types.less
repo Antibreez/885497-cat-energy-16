@@ -54,3 +54,42 @@
   text-transform: uppercase;
   color: @large-text-color;
 }
+
+@media (min-width: @tablet-width) {
+  .food-types {
+    padding-top: 0;
+  }
+
+  .food-types__item {
+    padding: 80px 280px 21px 52px;
+  }
+
+  .food-types__title {
+    padding: 0;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  .food-types__description {
+    border: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .food-types {
+    padding-top: 80px;
+  }
+
+  .food-types__list {
+    display: flex;
+  }
+
+  .food-types__item {
+    width: 570px;
+
+    &:first-child {
+      margin-bottom: 0;
+      margin-right: 80px;
+    }
+  }
+}

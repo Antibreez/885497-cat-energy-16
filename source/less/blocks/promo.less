@@ -4,6 +4,8 @@
   position: relative;
 
   padding: 0;
+
+  text-align: center;
 }
 
 .promo__bg {
@@ -11,11 +13,12 @@
   padding-top: 28px;
   padding-bottom: 145px;
 
+  text-align: center;
+
   background-image: url("../img/index-background-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-position: center top;
   background-color: #64a83b;
-  text-align: center;
 }
 
 .promo__title {
@@ -52,4 +55,86 @@
   margin-left: -140px;
 
   background-image: url("../img/index-can-mobile@1x.png");
+}
+
+@media (min-width: @tablet-width) {
+  .promo {
+    min-height: 841px;
+    padding-left: 118px;
+
+    text-align: left;
+
+    background-image: url("../img/index-can-tablet@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+  }
+
+  .promo__bg {
+    min-height: auto;
+    padding-bottom: 0;
+    padding-top: 31px;
+    margin-bottom: 47px;
+
+    text-align: left;
+
+    background-image: none;
+    background-color: transparent;
+  }
+
+  .promo__image {
+    display: none;
+  }
+
+  .promo__title {
+    margin: 0;
+    margin-bottom: 41px;
+    width: 100%;
+    padding-right: 132px;
+
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 400;
+    color: @large-text-color;
+  }
+
+  .promo__slogan {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 20px;
+    color: @large-text-color;
+  }
+
+  .promo__to-form {
+    margin: 0;
+    margin-left: 1px;
+    padding: 16px 28px 16px 26px;
+    width: auto;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .promo {
+    padding: 0;
+    padding-left: 190px;
+    padding-top: 220px;
+    min-height: 696px;
+    margin-top: -200px;
+
+    background-image:
+      url("../img/index-can-desktop@1x.png"),
+      url("../img/index-background-desktop@1x.jpg");
+
+    background-position:
+      top 142px right 327px,
+      top right;
+  }
+
+  .promo__title {
+    width: 490px;
+    padding-right: 0;
+  }
 }
