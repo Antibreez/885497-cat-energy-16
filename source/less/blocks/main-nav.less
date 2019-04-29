@@ -1,6 +1,7 @@
 .main-nav {
+  position: relative;
+
   width: 100%;
-  display: none;
 
   background-color: #ffffff;
 }
@@ -10,6 +11,8 @@
   margin: 0;
 
   list-style: none;
+
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .main-nav__item {
@@ -23,26 +26,102 @@
   color: @large-text-color;
 
   border-top: 1px solid #e6e6e6;
+}
 
-  &:last-child {
-    border-bottom: 1px solid #e6e6e6;
+.main-nav__item a {
+  padding: 10px;
+}
+
+@media (max-width: @mobile-width-only) {
+  .main-nav__toggle {
+    position: absolute;
+    top: -43px;
+    right: 20px;
+
+    width: 24px;
+    height: 18px;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+  }
+
+  .main-nav--closed .main-nav__toggle::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 24px;
+    height: 2px;
+
+    background-color: #222222;
+    box-shadow: 0 8px 0 0 #222222, 0 16px 0 0 #222222;
+  }
+
+  .main-nav--opened .main-nav__toggle {
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 7px;
+      left: 0;
+
+      width: 24px;
+      height: 2px;
+
+      background-color: #222222;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .main-nav--closed .main-nav__list {
+    display: none;
+  }
+
+  .main-nav--opened .main-nav__list {
+    display: block;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__list {
+    display: block;
   }
 }
 
 @media (min-width: @tablet-width) {
   .main-nav {
     display: block;
-    width: 515px;
+    width: 72.7%;
+  }
+
+  .main-nav__toggle {
+    display: none;
   }
 
   .main-nav__list {
     display: flex;
     flex-wrap: wrap;
+
+    border: none;
   }
 
   .main-nav__item {
-    margin-right: 36px;
-    padding: 9px 0 7px;
+    padding: 9px 0 8px;
 
     font-weight: 400;
     font-size: 18px;
@@ -52,32 +131,41 @@
 
     &:first-child {
       margin-left: auto;
-      margin-right: 34px;
+      margin-right: 6.6%;
     }
 
     &:nth-child(2) {
-      margin-right: 36px;
-    }
-
-    &:last-child {
-      margin: 0;
-
-      border: none;
+      margin-right: 7%;
     }
 
     &--active {
       border-bottom: 2px solid @theme-color;
     }
   }
+
+  .main-nav__item a {
+    padding: 10px 0;
+  }
 }
 
 @media (min-width: @desktop-width) {
   .main-nav {
+    width: 650px;
+
     background-color: transparent;
   }
 
   .main-nav__item {
     font-size: 20px;
+
+    &:first-child {
+      margin-left: auto;
+      margin-right: 36px;
+    }
+
+    &:nth-child(2) {
+      margin-right: 34px;
+    }
 
     &--index {
       color: #ffffff;
