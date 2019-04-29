@@ -102,6 +102,8 @@
   &::placeholder {
     color: @small-text-color;
     text-transform: uppercase;
+
+    opacity: 1;
   }
 }
 
@@ -199,11 +201,15 @@
 .program-form__additional {
   .wrapper;
 
-  position: relative;
-
   padding: 0;
 
   border: none;
+}
+
+.program-form__item-title {
+  position: relative;
+
+  width: 100%;
 
   &::before {
     content: "";
@@ -218,28 +224,29 @@
     background-color: @theme-color;
     z-index: -1;
   }
-}
 
-.program-form__additional::before {
-  top: 40px;
-}
+  &--additional::before {
+    top: 40px;
+  }
 
-.program-form__item-title {
-  padding: 28px 20px 34px;
-  width: 222px;
+  span {
+    display: inline-block;
+    padding: 28px 20px 34px;
+    width: 222px;
 
-  font-size: 24px;
-  line-height: 24px;
-  text-transform: none;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: none;
 
-  background-color: #ffffff;
+    background-color: #ffffff;
+  }
 
-  &--comment {
+  &--comment span {
     width: 162px;
     padding-bottom: 35px;
   }
 
-  &--additional {
+  &--additional span {
     width: 185px;
     padding-top: 26px;
   }
@@ -354,7 +361,7 @@
 }
 
 @media (min-width: 400px) {
-  .program-form__item-title {
+  .program-form__item-title span {
     width: auto;
   }
 }
@@ -459,31 +466,45 @@
   }
 
   .program-form__item-title {
-    padding: 75px 20px 76px 40px;
-    margin-left: 3.9%;
-    width: 594px;
+    span {
+      padding: 75px 20px 76px 40px;
+      margin-left: 3.9%;
+      width: 594px;
 
-    font-size: 36px;
-    line-height: 36px;
+      font-size: 36px;
+      line-height: 36px;
+    }
 
-    &--comment {
+    &--comment span {
       padding-top: 65px;
       width: 259px;
     }
 
-    &--additional {
+    &--additional span {
       padding-top: 64px;
-      padding-bottom: 55px;
+      padding-bottom: 56px;
       width: 292px;
+    }
+
+    &::before {
+      top: 97px;
+    }
+
+    &--comment {
+      &::before {
+        top: 87px;
+      }
+    }
+
+    &--additional {
+      &::before {
+        top: 87px;
+      }
     }
   }
 
   .program-form__contacts {
     padding: 0;
-
-    &::before {
-      top: 97px;
-    }
   }
 
   .program-form__contacts li {
@@ -502,10 +523,6 @@
 
   .program-form__comment {
     padding: 0;
-
-    &::before {
-      top: 87px;
-    }
   }
 
   .program-form__textarea {
@@ -521,10 +538,6 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-
-    &::before {
-      top: 86px;
-    }
   }
 
   .program-form__additional ul {
@@ -658,10 +671,6 @@
 
   .program-form__contacts {
     width: 100%;
-
-    &::before {
-      top: 91px;
-    }
   }
 
   .program-form__contacts ul {
@@ -689,34 +698,50 @@
   }
 
   .program-form__item-title {
-    width: 1440px;
-    margin: 0 auto;
-    padding-left: 70px;
-    padding-right: 777px;
-    padding-top: 69px;
+    width: 100%;
 
-    text-align: left;
+    text-align: center;
 
-    background-color: transparent;
+    &::before {
+      top: 91px;
+    }
 
     &--comment {
-      padding-top: 67px;
-      padding-right: 1111px;
+      &::before {
+        top: 89px;
+      }
     }
 
     &--additional {
-      padding-top: 67px;
-      padding-right: 1077px;
+      &::before {
+        top: 89px;
+      }
     }
-  }
 
-  .program-form__item-title span {
-    display: block;
-    padding-left: 40px;
-    padding-right: 20px;
-    width: 100%;
+    span {
+      padding-left: 39px;
+      padding-right: 20px;
+      padding-top: 68px;
+      padding-bottom: 77px;
+      width: auto;
+      min-width: 592px;
+      margin-left: -707px;
 
-    background-color: #ffffff;
+      text-align: left;
+    }
+
+    &--comment span {
+      padding-top: 66px;
+      min-width: 260px;
+      margin-left: -1041px;
+    }
+
+    &--additional span {
+      padding-top: 66px;
+      min-width: 293px;
+      margin-left: -1007px;
+      padding-bottom: 56px;
+    }
   }
 
   .program-form__input-text {
@@ -732,10 +757,6 @@
 
   .program-form__comment {
     width: 100%;
-
-    &::before {
-      top: 89px;
-    }
   }
 
   .program-form__textarea {
@@ -746,10 +767,6 @@
 
   .program-form__additional {
     width: 100%;
-
-    &::before {
-      top: 89px;
-    }
   }
 
   .program-form__additional ul {
