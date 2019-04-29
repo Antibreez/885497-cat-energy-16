@@ -17,6 +17,8 @@
 .page-footer__social {
   width: 100%;
   padding: 22px 0 21px;
+  padding-right: 19px;
+  padding-left: 10px;
 
   border-top: 1px solid @border-color;
   border-bottom: 1px solid @border-color;
@@ -31,10 +33,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 58px;
+    padding-bottom: 58px;
   }
 
   .page-footer__brand-name {
     margin: 0;
+    margin-right: 21px;
   }
 
   .page-footer__social {
@@ -46,5 +51,20 @@
 
   .page-footer__copyright {
     padding: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-footer {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .page-footer__brand-name {
+    margin-right: 411px;
+  }
+
+  .page-footer__copyright {
+    margin-left: 393px;
   }
 }

@@ -4,8 +4,6 @@
   width: 125px;
   margin: 0 auto;
   padding: 0;
-  padding-right: 19px;
-  padding-left: 10px;
 
   list-style: none;
   box-sizing: content-box;
@@ -18,6 +16,8 @@
 
 .social__link {
   display: block;
+
+  background-repeat: no-repeat;
 
   &--vkontakte {
     width: 22px;
@@ -38,5 +38,29 @@
     height: 19px;
 
     background-image: url("../img/icon-fb-mobile.svg");
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .social__item:nth-child(2) {
+    margin-left: 28px;
+    margin-right: auto;
+  }
+
+  .social__link {
+    &--vkontakte-big {
+      width: 30px;
+      height: 16px;
+    }
+
+    &--instagram-big {
+      width: 23px;
+      height: 23px;
+    }
+
+    &--facebook-big {
+      width: 14px;
+      height: 28px;
+    }
   }
 }

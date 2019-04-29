@@ -1,19 +1,60 @@
 .button {
   display: inline-block;
-  width: 280px;
-  padding: 13px 30px 13px;
+  width: auto;
+  padding: 10px 30px 10px;
 
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 16px;
+  line-height: 20px;
   text-transform: uppercase;
   text-align: center;
   color: #ffffff;
 
   background-color: @theme-color;
 
+  &--index {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    width: 280px;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
+
   &--order {
-    font-size: 16px;
-    line-height: 16px;
-    padding: 12px 0 12px;
+    width: 100%;
+    max-width: 490px;
+  }
+
+  &--grey {
+    color: @small-text-color;
+    background-color: @background-color;
+  }
+
+  &--pick {
+    width: 87.5%;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .button--index {
+    padding: 16px 28px 16px 26px;
+    width: auto;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .button--pick {
+    padding: 16px 28px 16px 26px;
+    width: 36.9%;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .button--pick {
+    width: 568px;
   }
 }

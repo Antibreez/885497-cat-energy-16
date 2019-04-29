@@ -2,10 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 34px;
 }
 
 .copyright__main-link {
+  margin-right: 23px;
+
   font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 16px;
@@ -15,8 +16,10 @@
 .copyright__logo-link {
   width: 27px;
   height: 34px;
+}
 
-  font-size: 0;
-
-  background-image: url("../img/htmlacademy.svg");
+@media (min-width: @tablet-width) {
+  .copyright {
+    justify-content: start;
+  }
 }
