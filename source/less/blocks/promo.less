@@ -6,6 +6,20 @@
   padding: 0;
 
   text-align: center;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 43px;
+
+    width: 280px;
+    height: 270px;
+    margin-left: -140px;
+
+    background-image: url("../img/index-can-mobile@1x.png");
+  }
 }
 
 .promo__bg {
@@ -48,18 +62,6 @@
   margin-top: 135px;
 }
 
-.promo__image {
-  position: absolute;
-  left: 50%;
-  bottom: 43px;
-
-  width: 280px;
-  height: 270px;
-  margin-left: -140px;
-
-  background-image: url("../img/index-can-mobile@1x.png");
-}
-
 @media (min-width: @tablet-width) {
   .promo {
     min-height: 841px;
@@ -70,6 +72,10 @@
     background-image: url("../img/index-can-tablet@1x.jpg");
     background-repeat: no-repeat;
     background-position: center bottom;
+
+    &::before {
+      display: none;
+    }
   }
 
   .promo__bg {
@@ -82,10 +88,6 @@
 
     background-image: none;
     background-color: transparent;
-  }
-
-  .promo__image {
-    display: none;
   }
 
   .promo__title {
