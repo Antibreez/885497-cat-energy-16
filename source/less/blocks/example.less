@@ -320,6 +320,7 @@
     width: 100%;
     min-height: 462px;
     padding-bottom: 81px;
+    padding-top: 372px;
     margin-top: -348px;
     align-items: flex-end;
 
@@ -371,21 +372,22 @@
   }
 
   .example__toggle-value {
+    position: absolute;
+    top: -8px;
+    margin: 0;
     padding-bottom: 6px;
-    margin-top: -8px;
 
     font-size: 20px;
+    line-height: 20px;
 
     border-bottom: 1px dotted #bebebe;
 
     &--before {
-      min-width: 48px;
-      margin-left: -76px;
-      margin-right: 72px;
+      right: 453px;
     }
 
     &--after {
-      min-width: 52px;
+      left: 448px;
     }
 
     &::after {
@@ -484,6 +486,8 @@
 
   .example__toggle-box {
     margin-top: 0;
+    display: block;
+    padding-top: 375px;
 
     background: linear-gradient(to right, @background-color 325px, #eaeaea 325px);
   }
