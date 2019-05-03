@@ -10,7 +10,11 @@
     <header class="page-header">
       <div class="page-header__bar">
         <a class="page-header__logo  logo">
-          <img class="logo__image" src="img/logo-mobile-img.svg" width="33" height="38" alt="Cat Energy">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+            <img class="logo__image" src="img/logo-mobile-img.svg" width="33" height="38" alt="Cat Energy">
+          </picture>
         </a>
         <a class="page-header__brand-name">
           <img class="page-header__brand-name-image" src="img/logo-mobile-text.svg" width="101" height="18" alt="Cat Energy">
@@ -93,31 +97,36 @@
               <p class="example__parameters-text">затрачено времени</p>
             </li>
           </ul>
-          <p class="example__costs">Затраты на питание: 15&nbsp;000&nbsp;руб.</p>
+          <p class="example__costs">Затраты на питание: <span>15&nbsp;000&nbsp;руб.</span></p>
         </div>
         <div class="example__cats-wrapper">
           <div class="example__picture-box">
             <div class="example__picture-wrapper  example__picture-wrapper--before  example__picture-wrapper--show">
               <picture>
-                <source media="(min-width: 1440px)" srcset="img/before-desktop@1x.png">
-                <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png">
-                <img class="example__picture  example__picture--before" src="img/before-mobile@1x.png" alt="Фотография ДО">
+                <source media="(min-width: 1440px)" srcset="img/before-desktop@1x.png 1x, img/before-desktop@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png 1x, img/before-tablet@2x.png 2x">
+                <img class="example__picture  example__picture--before" src="img/before-mobile@1x.png" srcset="img/before-mobile@2x.png 2x" alt="Фотография ДО">
               </picture>
             </div>
             <div class="example__picture-wrapper  example__picture-wrapper--after">
               <picture>
-                <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png">
-                <img class="example__picture  example__picture--after" src="img/after-mobile@1x.png" alt="Фотография ПОСЛЕ">
+                <source media="(min-width: 1440px)" srcset="img/after-desktop@1x.png 1x, img/after-desktop@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png 1x, img/after-tablet@2x.png 2x">
+                <img class="example__picture  example__picture--after" src="img/after-mobile@1x.png" srcset="img/after-mobile@2x.png 2x" alt="Фотография ПОСЛЕ">
               </picture>
             </div>
           </div>
           <div class="example__toggle-box">
-            <label for="before" class="example__toggle-value  example__toggle-value--before">Было</label>
-            <div class="example__button-box">
-              <input type="radio" id="before" name="before-after" checked>
-              <input type="radio" id="after" name="before-after">
-            </div>
-            <label for="after" class="example__toggle-value  example__toggle-value--after">Стало</label>
+            <ul class="example__button-box">
+              <li class="example__button-box-item">
+                <input class="example__button-box-input  visually-hidden" type="radio" id="before" name="before-after" checked>
+                <label for="before" class="example__toggle-value  example__toggle-value--before">Было</label>
+              </li>
+              <li class="example__button-box-item">
+                <input class="example__button-box-input  visually-hidden" type="radio" id="after" name="before-after">
+                <label for="after" class="example__toggle-value  example__toggle-value--after">Стало</label>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

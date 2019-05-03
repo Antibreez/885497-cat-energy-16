@@ -119,6 +119,8 @@
 .example__picture {
   position: absolute;
 
+  max-width: none;
+
   &--before {
     top: 0;
     left: 0;
@@ -132,25 +134,73 @@
 
 .example__toggle-box {
   display: flex;
+  align-items: center;
+  padding: 3px 0;
+  justify-content: center;
 }
 
-.example__toggle-range {
+.example__button-box {
+  display: block;
+  margin: 0;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
   width: 84px;
+  height: 14px;
+
+  background-color: #ffffff;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+  list-style: none;
+}
+
+.example__button-box-item {
+  width: 35px;
+  height: 12px;
 }
 
 .example__toggle-value {
+  position: relative;
+
+  display: block;
+  margin-top: -4px;
+
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
   color: @large-text-color;
 
   &--before {
-    margin-left: auto;
+    margin-left: -60px;
   }
 
   &--after {
-    margin-right: auto;
+    margin-left: 60px;
   }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 7px;
+
+    width: 35px;
+    height: 6px;
+
+    border-radius: 3px;
+  }
+
+  &--before::after {
+    left: 60px;
+  }
+
+  &--after::after {
+    left: -60px;
+  }
+}
+
+.example__button-box-input:checked + .example__toggle-value::after {
+  background-color: @theme-color;
 }
 
 @media (min-width: @tablet-width) {
@@ -269,19 +319,78 @@
   .example__toggle-box {
     width: 100%;
     min-height: 462px;
-    padding-bottom: 68px;
+    padding-bottom: 81px;
     margin-top: -348px;
     align-items: flex-end;
 
     background: linear-gradient(to right, #f2f2f2 50%, #eaeaea 50%);
   }
 
+  .example__button-box {
+    position: relative;
+
+    width: 428px;
+    height: 6px;
+
+    background-color: #dcdcdc;
+    border: none;
+    border-radius: 3px;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: -14px;
+      left: 50%;
+
+      width: 34px;
+      height: 34px;
+      margin-left: -17px;
+
+      background-color: #ffffff;
+      border-radius: 50%;
+      box-shadow:
+        inset 0 0 0 1px #cecece,
+        0 2px 5px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: -1px;
+      left: 50%;
+
+      width: 8px;
+      height: 8px;
+      margin-left: -4px;
+
+      background-color: @theme-color;
+      border-radius: 50%;
+    }
+  }
+
   .example__toggle-value {
-    padding-bottom: 7px;
+    padding-bottom: 6px;
+    margin-top: -8px;
 
     font-size: 20px;
 
     border-bottom: 1px dotted #bebebe;
+
+    &--before {
+      min-width: 48px;
+      margin-left: -76px;
+      margin-right: 72px;
+    }
+
+    &--after {
+      min-width: 52px;
+    }
+
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -377,5 +486,10 @@
     margin-top: 0;
 
     background: linear-gradient(to right, @background-color 325px, #eaeaea 325px);
+  }
+
+  .example__button-box {
+    margin-right: auto;
+    margin-left: 111px;
   }
 }
