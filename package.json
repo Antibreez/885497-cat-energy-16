@@ -39,6 +39,7 @@
     "node": "8.15"
   },
   "dependencies": {
-    "svgxuse": "^1.2.6"
+    "svgxuse": "^1.2.6",
+    "webp-converter": "^2.2.2"
   }
 }
