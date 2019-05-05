@@ -7,6 +7,6 @@
 @tablet-width: 768px;
 @desktop-width: 1300px;
 @mobile-width-only: 767px;
-@dpi: 144dpi;
-@dppx: 1.5dppx;
-@retina: (min-resolution: @dpi), (min-resolution: @dppx);
+@dpi: ~'(min-resolution: 144dpi)';
+@dppx: ~'(min-resolution: 1.5dppx)';
+@retina: @dpi, @dppx;
