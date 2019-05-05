@@ -69,6 +69,28 @@
   &--time::before {
     background-image: url("../img/advantage-clock@1x.png");
   }
+
+  @media @retina {
+    &--healthy::before {
+      background-image: url("../img/advantage-leaf@2x.png");
+      background-size: 50px auto;
+    }
+
+    &--pouder::before {
+      background-image: url("../img/advantage-powder@2x.png");
+      background-size: 50px auto;
+    }
+
+    &--replacement::before {
+      background-image: url("../img/advantage-dining@2x.png");
+      background-size: 50px auto;
+    }
+
+    &--time::before {
+      background-image: url("../img/advantage-clock@2x.png");
+      background-size: 50px auto;
+    }
+  }
 }
 
 @media (min-width: @tablet-width) {
