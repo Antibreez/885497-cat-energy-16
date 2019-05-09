@@ -26,6 +26,14 @@
   color: @large-text-color;
 
   border-top: 1px solid #e6e6e6;
+
+  &:hover a[href] {
+    opacity: 0.6;
+  }
+
+  &:active a[href] {
+    opacity: 0.3;
+  }
 }
 
 .main-nav__item a {
@@ -121,7 +129,7 @@
   }
 
   .main-nav__item {
-    padding: 9px 0 8px;
+    padding: 9px 0 7px;
 
     font-weight: 400;
     font-size: 18px;
@@ -144,7 +152,8 @@
   }
 
   .main-nav__item a {
-    padding: 10px 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
