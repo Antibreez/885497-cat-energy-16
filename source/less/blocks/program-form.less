@@ -68,48 +68,50 @@
   align-items: center;
 }
 
-.program-form input,
-.program-form textarea {
-  &::-webkit-input-placeholder {
-    color: @small-text-color;
-    text-transform: uppercase;
-  }
+.program-form__input-text::-webkit-input-placeholder,
+.program-form__textarea::-webkit-input-placeholder {
+  color: @small-text-color;
+  text-transform: uppercase;
+}
 
-  &:-moz-placeholder {
-    color: @small-text-color;
-    text-transform: uppercase;
+.program-form__input-text:-moz-placeholder,
+.program-form__textarea:-moz-placeholder {
+  color: @small-text-color;
+  text-transform: uppercase;
 
-    opacity: 1;
-  }
+  opacity: 1;
+}
 
-  &::-moz-placeholder {
-    color: @small-text-color;
-    text-transform: uppercase;
+.program-form__input-text::-moz-placeholder,
+.program-form__textarea::-moz-placeholder {
+  color: @small-text-color;
+  text-transform: uppercase;
 
-    opacity: 1;
-  }
+  opacity: 1;
+}
 
-  &:-ms-input-placeholder {
-    color: @small-text-color;
-    text-transform: uppercase;
-  }
+.program-form__input-text:-ms-input-placeholder,
+.program-form__textarea:-ms-input-placeholder {
+  color: @small-text-color;
+  text-transform: uppercase;
+}
 
-  &::-ms-input-placeholder {
-    color: @small-text-color;
-    text-transform: uppercase;
-  }
+.program-form__input-text::-ms-clear {
+  display: none;
+}
 
-  &::placeholder {
-    color: @small-text-color;
-    text-transform: uppercase;
+.program-form__input-text::placeholder,
+.program-form__textarea::placeholder {
+  color: @small-text-color;
+  text-transform: uppercase;
 
-    opacity: 1;
-  }
+  opacity: 1;
 }
 
 .program-form__input-text {
   flex-grow: 1;
   padding: 13px 15px 12px;
+  height: 45px;
 
   text-transform: uppercase;
 
@@ -144,6 +146,10 @@
     border: 2px solid #444444;
     outline: none;
   }
+
+  &:invalid {
+    border: 2px solid #ff8282;
+  }
 }
 
 .program-form__type {
@@ -168,6 +174,7 @@
   display: flex;
   align-items: center;
   min-height: 30px;
+  height: 29px;
 
   &:not(:last-child) {
     margin-bottom: 13px;
@@ -176,6 +183,7 @@
 
 .program-form__type label {
   padding-left: 46px;
+  max-width: 100%;
 
   &::before {
     content: "";
@@ -190,6 +198,22 @@
     border: 1px solid #cecece;
     border-radius: 50%;
   }
+
+  &:hover::before {
+    cursor: pointer;
+    border-color: #bababa;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.program-form__input-radio:focus + label::before {
+  border-color: #663d15;
+  outline:
+    thin dotted,
+    1px solid -webkit-focus-ring-color;
 }
 
 .program-form__input-radio:checked + label::after {
@@ -312,6 +336,10 @@
   color: #68b738;
 }
 
+.program-form__input-text:invalid + .program-form__icon {
+  color: #ff8282;
+}
+
 .program-form__textarea {
   width: 87.5%;
   min-height: 150px;
@@ -372,6 +400,22 @@
 
     border: 1px solid #cecece;
   }
+
+  &:hover::before {
+    cursor: pointer;
+    border-color: #bababa;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.program-form__input-checkbox:focus + label::before {
+  border-color: #663d15;
+  outline:
+    thin dotted,
+    1px solid -webkit-focus-ring-color;
 }
 
 .program-form__input-checkbox:checked + label::after {
@@ -463,6 +507,7 @@
 
   .program-form__input-text {
     padding: 13px 18px 14px;
+    height: 52px;
 
     &--name {
       margin-left: 16px;
@@ -482,7 +527,7 @@
     }
 
     &--phone {
-      margin-left: 13px;
+      margin-left: 14px;
     }
   }
 
@@ -494,8 +539,9 @@
     width: 82%;
   }
 
-  .program-form li {
+  .program-form__type li {
     min-height: 40px;
+    height: 39px;
   }
 
   .program-form__type label {
@@ -532,7 +578,7 @@
 
     &--additional span {
       padding-top: 64px;
-      padding-bottom: 56px;
+      padding-bottom: 55px;
       width: 292px;
     }
 
@@ -548,7 +594,7 @@
 
     &--additional {
       &::before {
-        top: 87px;
+        top: 86px;
       }
     }
   }
@@ -569,6 +615,18 @@
     margin-left: 9.3%;
     margin-right: 8.4%;
     width: 82.3%;
+  }
+
+  .program-form__icon {
+    &--email {
+      top: 20px;
+      right: 21px;
+    }
+
+    &--phone {
+      top: 17px;
+      right: 17px;
+    }
   }
 
   .program-form__comment {
