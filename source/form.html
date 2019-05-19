@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>HTML Academy: Кэт энерджи</title>
     <link href="css/style.min.css" rel="stylesheet">
-    <link rel="preload" href="fonts/oswaldmedium.woff2">
-    <link rel="preload" href="fonts/oswaldregular.woff2">
+    <link rel="preload" href="fonts/oswaldmedium.woff2" as="font">
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
   <body>
@@ -21,7 +21,7 @@
             <img class="logo__image" src="img/logo-mobile-img.svg" width="33" height="38" alt="Cat Energy">
           </picture>
         </a>
-        <a class="page-header__brand-name">
+        <a class="page-header__brand-name" href="index.html">
           <img class="page-header__brand-name-image" src="img/logo-mobile-text.svg" width="101" height="18" alt="Cat Energy">
         </a>
       </div>
@@ -64,7 +64,7 @@
               </li>
               <li>
                 <label>
-                  Возраст (лет):
+                  Возраст&nbsp;(лет):
                   <input class="program-form__input-text  program-form__input-text--age" type="text" name="name" placeholder="7" pattern="^[ 0-9]+$">
                 </label>
               </li>

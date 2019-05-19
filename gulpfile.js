@@ -35,6 +35,16 @@ gulp.task("copy", function () {
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
     .pipe(plumber())
+    .pipe(less())
+    .pipe(postcss([
+      autoprefixer()
+    ]))
+    .pipe(gulp.dest("build/css"))
+});
+
+gulp.task("cssmin", function () {
+  return gulp.src("source/less/style.less")
+    .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(less())
     .pipe(postcss([
@@ -95,7 +105,7 @@ gulp.task("server", function () {
     ui: false
   });
 
-  gulp.watch("source/less/**/*.less", gulp.series("css"));
+  gulp.watch("source/less/**/*.less", gulp.series("css", "cssmin"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
   gulp.watch("source/**/*.js", gulp.series("js", "refresh"));
@@ -110,6 +120,7 @@ gulp.task("build", gulp.series(
   "clean",
   "copy",
   "css",
+  "cssmin",
   "sprite",
   "html"
   ));
