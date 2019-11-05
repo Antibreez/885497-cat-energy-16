@@ -148,7 +148,6 @@
       </section>
       <section class="map-block">
         <h2 class="visually-hidden">Наши координаты</h2>
-        <div id="map"></div>
       </section>
     </main>
     <footer class="page-footer">
@@ -182,7 +181,7 @@
             </a>
           </li>
         </ul>
-      </>
+      </div>
       <a class="page-footer__copyright  copyright" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Переход на сайт HTML Academy">
         <span class="copyright__main-link">HTML Academy</span>
         <svg class="copyright__logo-link" role="img" width="27" height="34">
@@ -194,21 +193,5 @@
     <script src="js/main.js"></script>
     <script src="js/picturefill.js" async></script>
     <script defer src="js/svgxuse.js"></script>
-    <script>
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: {lat: 59.938748, lng: 30.323087}
-        });
-
-        var image = "img/map-pin.png";
-        var beachMarker = new google.maps.Marker({
-          position: {lat: 59.938748, lng: 30.323087},
-          map: map,
-          icon: image
-        });
-      }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQmEJaADUurwb7rfBx08Pun67fdxWXTjM&callback=initMap"></script>
   </body>
 </html>
